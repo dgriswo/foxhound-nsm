@@ -180,10 +180,9 @@ if [ "${ntp_server}" == "" ]; then
 	Info "No ntp server set, skipping."
 else
 	Info "Configuring NTP"
-	sed -i.bak 's/^pool /# pool /' /etc/ntp.conf
-	sed -i 's/^server /# server /' /etc/ntp.conf
-	echo "## added by foxhound:"  >> /etc/ntp.conf
-	echo "server $ntp_server" >> /etc/ntp.conf
+	sed -i.bak "s/^#NTP=$/NTP=${ntp_server}" /etc/systemd/timesyncd.conf
+	systemctl enable systemd-timesyncd.service
+	systemctl start systemd-timesyncd.service
 fi
 }
 

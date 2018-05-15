@@ -1,0 +1,16 @@
+# Replace the country code with the appropriate code for your location.
+country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    # Replace SSID with the SSID you would like to connect to
+    ssid="SSID"
+    # if SSID is broadcasted, set to 0.  if SSID is hidden, set to 1.
+    scan_ssid=1
+    # Replace PASSPHRASE with your passphrase
+    psk="PASSPHRASE"
+    # see https://linux.die.net/man/5/wpa_supplicant.conf key options other than WPA-PSK
+    key_mgmt=WPA-PSK
+}
+

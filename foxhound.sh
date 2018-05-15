@@ -191,19 +191,6 @@ fi
 function install_loki() 
 {
 Info "Installing YARA packages"
-	# Info "Installing Pylzma"
-	#	cd /opt/
-	#	wget  https://pypi.python.org/packages/fe/33/9fa773d6f2f11d95f24e590190220e23badfea3725ed71d78908fbfd4a14/pylzma-0.4.8.tar.gz 
-	#	tar -zxvf pylzma-0.4.8.tar.gz
-	#	cd pylzma-0.4.8/
-	#	python ez_setup.py 
-	#	python setup.py 
-	# Info "Installing YARA"
-		# git clone  https://github.com/VirusTotal/yara.git /opt/yara
-		# cd /opt/yara
-		# ./bootstrap.sh 
-		# ./configure 
-		# make && make install 
 	Info "Installing PIP LOKI Packages"
 		pip install psutil
 		pip install yara-python
@@ -227,17 +214,6 @@ function install_bro()
 {
 Info "Installing Bro"
 	apt-get -y install bro broctl bro-common bro-aux 
-	# cd /opt/
-		# wget  https://www.bro.org/downloads/release/bro-2.4.1.tar.gz 
-		# wget  https://www.bro.org/downloads/bro-2.5.2.tar.gz
-		# tar -xzf bro-2.5.2.tar.gz
-	# cd bro-2.5.2 
-		# ./configure --localstatedir=/nsm/bro/
-		# make -j 4 
-		# make install 
-	# Info "Setting Bro variables"
-	# echo "export PATH=/usr/local/bro/bin:$PATH" >> /etc/profile
-	# source ~/.bashrc
 }
 
 function install_criticalstack() 

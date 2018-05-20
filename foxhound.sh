@@ -205,7 +205,7 @@ Info "Installing YARA packages"
 		echo "export PYTHONPATH=$PYTHONPATH:/nsm/Loki" >> /etc/profile		
 echo "
 #!/bin/sh
-/usr/bin/python /nsm/Loki/loki.py --noprocscan --dontwait --onlyrelevant -p /nsm/bro/extracted -l /nsm/Loki/log
+/usr/bin/python /nsm/Loki/loki.py --noindicator --noprocscan --dontwait --onlyrelevant -p /nsm/bro/extracted -l /nsm/Loki/log
 " \ > /nsm/scripts/scan
 chmod +x /nsm/scripts/scan
 }
